@@ -30,6 +30,6 @@
 
     <ng-template flexiGridColumnCommandTemplate let-item>
         <flexi-button btnIcon="edit" btnColor="info" btnSize="small" title="Güncelle" flexiTooltip />
-        <flexi-button btnIcon="delete" btnColor="danger" btnSize="small" title="Sil" flexiTooltip />
+        <flexi-button (click)="delete(item.id)" btnIcon="delete" btnColor="danger" btnSize="small" title="Sil" flexiTooltip />
     </ng-template>
 </flexi-grid>
