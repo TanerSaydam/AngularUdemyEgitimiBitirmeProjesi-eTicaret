@@ -1,13 +1,10 @@
-<app-blank pageTitle="Kategori Ekle" [breadcrumbs]="[
-    {title: 'Kategoriler', url: '/categories', icon: 'category'},
-    {title: 'Ekle', url: '/categories/create', icon: 'add'},
-    ]" />
+<app-blank [pageTitle]="title()" [breadcrumbs]="breadcrumbs()" />
 
 <div class="row">
     <div class="col-md-4 col-12">
         <div class="card">
             <div class="card-header">
-                <h4>{{cardTitle()}}</h4>
+                <h4>{{title()}}</h4>
             </div>
             <div class="card-body">
                 <form #form="ngForm" autocomplete="off" (ngSubmit)="save(form)">

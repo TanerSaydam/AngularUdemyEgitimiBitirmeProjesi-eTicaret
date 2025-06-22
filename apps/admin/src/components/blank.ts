@@ -11,13 +11,13 @@ import { Common } from '../services/common';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export default class Blank implements AfterViewInit{
+export default class Blank implements OnChanges{
   readonly pageTitle = input.required<string>();
   readonly breadcrumbs = input.required<BreadcrumbModel[]>();
 
   readonly #common = inject(Common);
 
-  ngAfterViewInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
     this.#common.set(this.breadcrumbs());
   }
 }

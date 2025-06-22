@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FlexiToastService } from 'flexi-toast';
 import { FormsModule, NgForm } from '@angular/forms';
 import Blank from 'apps/admin/src/components/blank';
+import { BreadcrumbModel } from '../../layouts/breadcrumb';
 
 @Component({
   imports: [
@@ -18,16 +19,22 @@ import Blank from 'apps/admin/src/components/blank';
 })
 export default class CreateUser {
   readonly id = signal<string | undefined>(undefined);
+  readonly breadcrumbs = signal<BreadcrumbModel[]>([
+    {title: 'Kullanıcılar', url: '/users', icon: 'group'},
+  ]);
   readonly result = resource({
     params: () => this.id(),
     loader: async () => {
       var res = await lastValueFrom(this.#http.get<UserModel>(`api/users/${this.id()}`));
+      this.breadcrumbs.update(prev => [...prev,
+          {title: res.fullName, url: `/users/edit/${this.id()}`, icon: 'edit'},]);
       return res;
     }
   });
   readonly data = linkedSignal(() => this.result.value() ?? {...initialUser});
-  readonly cardTitle = computed(() => this.id() ? 'Kullanıcı Güncelle' : 'Kullanıcı Ekle');
+  readonly title = computed(() => this.id() ? 'Kullanıcı Güncelle' : 'Kullanıcı Ekle');
   readonly btnName = computed(() => this.id() ? 'Güncelle' : 'Kaydet');
+
 
   readonly #http = inject(HttpClient);
   readonly #activated = inject(ActivatedRoute);
@@ -38,6 +45,9 @@ export default class CreateUser {
     this.#activated.params.subscribe(res => {
       if(res['id']){
         this.id.set(res['id']);
+      }else{
+        this.breadcrumbs.update(prev => [...prev,
+          {title: 'Ekle', url: '/users/create', icon: 'add'},])
       }
     });
   }
