@@ -6,8 +6,12 @@ import { RouterLink } from '@angular/router';
 import { FlexiToastService } from 'flexi-toast';
 
 export interface CategoryModel{
-  id: string;
+  id?: string;
   name: string;
+}
+
+export const initialCategory: CategoryModel = {
+  name: ""
 }
 
 @Component({

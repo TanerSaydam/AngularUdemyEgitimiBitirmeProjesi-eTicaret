@@ -10,14 +10,28 @@
       "categoryName": "Telefon"
     },
     {
-      "id": "",
+      "id": "124",
       "name": "MacBook Air M2",
       "imageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg",
       "price": 35499,
       "stock": "10",
       "categoryId": "123",
       "categoryName": "Telefon"
+    },
+    {
+      "id": "125",
+      "name": "Apple Watch Series 9",
+      "imageUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple-watch-series-9.png",
+      "price": 49950,
+      "stock": "3",
+      "categoryId": "123",
+      "categoryName": "Telefon"
     }
   ],
-  "categories": []
+  "categories": [
+    {
+      "id": "12dd",
+      "name": "Bilgisayar"
+    }
+  ]
 }

@@ -54,11 +54,13 @@ export default class ProductCreate {
       this.#http.post("http://localhost:3000/products", this.data()).subscribe(() => {
         this.#router.navigateByUrl("/products");
         this.#toast.showToast("Başarılı","Ürün başarıyla eklendi","success");
+        this.data.set(initialProduct);
       });
     }else{
       this.#http.put(`http://localhost:3000/products/${this.id()}`, this.data()).subscribe(() => {
         this.#router.navigateByUrl("/products");
         this.#toast.showToast("Başarılı","Ürün başarıyla güncellendi","info");
+        this.data.set(initialProduct);
       });
     }
   }

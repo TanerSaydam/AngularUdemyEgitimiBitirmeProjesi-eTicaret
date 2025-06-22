@@ -7,11 +7,11 @@ const routes: Routes = [
     },
     {
         path: 'create',
-        loadComponent: () => import("./create/create")
+        loadComponent: () => import('./create/create')
     },
     {
         path: 'edit/:id',
-        loadComponent: () => import("./create/create")
+        loadComponent: () => import('./create/create')
     }
 ]
 
