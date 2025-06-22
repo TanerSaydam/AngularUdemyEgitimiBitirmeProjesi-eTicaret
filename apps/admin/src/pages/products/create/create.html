@@ -7,18 +7,18 @@
     <div class="col-md-4 col-12">
         <div class="card">
             <div class="card-header">
-                <h4>Ürün Ekle</h4>
+                <h4>{{cardTitle()}}</h4>
             </div>
             <div class="card-body">
                 <form #form="ngForm" autocomplete="off" (ngSubmit)="save(form)">
                     <div class="form-group">
                         <label>Ürün Adı</label>
-                        <input type="text" class="form-control" ngModel name="name">
+                        <input type="text" class="form-control" [(ngModel)]="data().name" name="name">
                     </div>
 
                     <div class="form-group mt-2">
                         <label>Ürün Resmi</label>
-                        <input type="text" class="form-control" ngModel name="imageUrl">
+                        <input type="text" class="form-control" [(ngModel)]="data().imageUrl" name="imageUrl">
                     </div>
 
                     <div class="form-group mt-2">
@@ -26,7 +26,7 @@
                         <input
                             type="text"
                             class="form-control"
-                            ngModel
+                            [(ngModel)]="data().price"
                             name="price"
                             mask="separator.2"
                             thousandSeparator=".">
@@ -34,11 +34,11 @@
 
                     <div class="form-group mt-2">
                         <label>Stok Adedi</label>
-                        <input type="text" class="form-control" ngModel name="stock">
+                        <input type="text" class="form-control" [(ngModel)]="data().stock" name="stock">
                     </div>
 
                     <div class="form-group mt-2 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                        <button type="submit" class="btn btn-primary">{{btnName()}}</button>
                     </div>
                 </form>
             </div>
