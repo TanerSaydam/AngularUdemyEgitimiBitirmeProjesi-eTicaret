@@ -12,6 +12,19 @@
             <div class="card-body">
                 <form #form="ngForm" autocomplete="off" (ngSubmit)="save(form)">
                     <div class="form-group">
+                        <label>Kategori</label>
+                        <flexi-select
+                        [data]="categories()"
+                        label="name"
+                        value="id"
+                        [(ngModel)]="data().categoryId"
+                        name="categoryId"
+                        [required]="true"
+                        [loading]="categoryLoading()"
+                        language="tr"
+                        (ngModelChange)="setCategoryName()"/>
+                    </div>
+                    <div class="form-group mt-2">
                         <label>Ürün Adı</label>
                         <input type="text" class="form-control" [(ngModel)]="data().name" name="name">
                     </div>

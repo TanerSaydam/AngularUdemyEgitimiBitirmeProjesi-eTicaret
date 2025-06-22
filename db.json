@@ -6,7 +6,7 @@
       "name": "Iphone 15 Pro2",
       "price": 100000,
       "stock": 15,
-      "categoryId": "233",
+      "categoryId": "746c",
       "categoryName": "Telefon"
     },
     {
@@ -15,8 +15,8 @@
       "imageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg",
       "price": 35499,
       "stock": "10",
-      "categoryId": "123",
-      "categoryName": "Telefon"
+      "categoryId": "8507",
+      "categoryName": "Bilgisayar"
     },
     {
       "id": "125",
@@ -24,8 +24,8 @@
       "imageUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple-watch-series-9.png",
       "price": 49950,
       "stock": "3",
-      "categoryId": "123",
-      "categoryName": "Telefon"
+      "categoryId": "53ef",
+      "categoryName": "Akıllı Saat"
     }
   ],
   "categories": [
@@ -40,6 +40,10 @@
     {
       "id": "53ef",
       "name": "Akıllı Saat"
+    },
+    {
+      "id": "005c",
+      "name": "Temizlik Aletleri"
     }
   ]
 }

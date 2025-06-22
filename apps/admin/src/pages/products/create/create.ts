@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, computed, inject, linkedSignal, resource, signal, ViewEncapsulation } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,11 +7,14 @@ import { FlexiToastService } from 'flexi-toast';
 import { NgxMaskDirective } from 'ngx-mask';
 import { lastValueFrom } from 'rxjs';
 import { initialProduct, ProductModel } from '../products';
+import { CategoryModel } from '../../categories/categories';
+import { FlexiSelectModule } from 'flexi-select';
 
 @Component({
   imports: [
     Blank,
     FormsModule,
+    FlexiSelectModule,
     NgxMaskDirective
   ],
   templateUrl: './create.html',
@@ -28,11 +31,14 @@ export default class ProductCreate {
       );
       return res;
     }
-  })
-
-  readonly data = computed(() => this.result.value() ?? {...initialProduct});
+  });
+  readonly data = linkedSignal(() => this.result.value() ?? {...initialProduct});
   readonly cardTitle = computed(() => this.id() ? 'Ürün Güncelle' : 'Ürün Ekle');
   readonly btnName = computed(() => this.id() ? 'Güncelle' : 'Kaydet');
+
+  readonly categoryResult = httpResource<CategoryModel[]>(() => "api/categories");
+  readonly categories = computed(() => this.categoryResult.value() ?? []);
+  readonly categoryLoading = computed(() => this.categoryResult.isLoading());
 
   readonly #http = inject(HttpClient);
   readonly #router = inject(Router);
@@ -61,5 +67,11 @@ export default class ProductCreate {
         this.#toast.showToast("Başarılı","Ürün başarıyla güncellendi","info");
       });
     }
+  }
+
+  setCategoryName(){
+    const id = this.data().categoryId;
+    const category = this.categories().find(p => p.id == id);
+    this.data.update((prev) => ({...prev, categoryName: category?.name ?? ""}))
   }
 }
