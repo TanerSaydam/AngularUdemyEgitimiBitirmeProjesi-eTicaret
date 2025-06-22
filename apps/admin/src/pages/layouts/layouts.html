@@ -21,13 +21,13 @@
                         <img src="https://emuhasebe-dev.ecnorow.com/images/avatar/24.png" alt="User Avatar">
                     </div>
                     <div class="d-flex flex-direction-column">
-                        <span class="d-none d-md-inline small-text">Jhon Doe</span>
-                        <span class="d-none d-md-inline small-x-text">{{'jhon@doe.com'}}</span>
+                        <span class="d-none d-md-inline small-text">{{user().fullName}}</span>
+                        <span class="d-none d-md-inline small-x-text">{{user().email}}</span>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
                     <li>
-                        <a class="dropdown-item small-text" routerLink="/login">
+                        <a class="dropdown-item small-text" (click)="logout()">
                             <span class="material-symbols-outlined me-2">logout</span>
                             <span>Çıkış Yap</span>
                         </a>
@@ -87,7 +87,7 @@
                 <img src="https://emuhasebe-dev.ecnorow.com/images/avatar/24.png" alt="User Avatar">
             </div>
             <div class="user-info">
-                <span class="user-name">Jhon Doe</span>
+                <span class="user-name">{{user().fullName}}</span>
             </div>
         </div>
 
@@ -126,7 +126,7 @@
             <a href="#" class="sticky-menu-item" title="Yardım">
                 <span class="material-symbols-outlined">help</span>
             </a>
-            <a routerLink="/" class="sticky-menu-item" title="Çıkış Yap">
+            <a (click)="logout()" class="sticky-menu-item" title="Çıkış Yap">
                 <span class="material-symbols-outlined">logout</span>
             </a>
         </div>
