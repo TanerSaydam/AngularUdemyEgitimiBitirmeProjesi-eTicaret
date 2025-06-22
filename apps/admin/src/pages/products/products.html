@@ -1,10 +1,12 @@
 <app-blank pageTitle="Ürünler" [breadcrumbs]="[{title: 'Ürünler', url: '/products', icon: 'deployed_code'}]" />
 <flexi-grid
     [data]="data()"
+    [loading]="loading()"
     [showCaption]="true"
     captionTitle="Ürün Listesi"
     [showExportExcelBtn]="true"
     language="tr"
+    (onRefresh)="result.reload()"
 >
     <flexi-grid-column field="imageUrl" title="Ürün Resmi" textAlign="center" [filterable]="false" width="70px">
         <ng-template flexiGridCellTemplate let-item>
@@ -12,6 +14,7 @@
         </ng-template>
     </flexi-grid-column>
     <flexi-grid-column field="name" title="Ürün Adı" />
+    <flexi-grid-column field="categoryName" title="Kategori Adı" filterType="select" [filterData]="categoryFilter()" />
     <flexi-grid-column field="price" title="Birim Fiyatı" filterType="number" textAlign="right" format="c" symbol="₺" />
     <flexi-grid-column field="stock" title="Stok Adedi" filterType="number" textAlign="right" />
 
