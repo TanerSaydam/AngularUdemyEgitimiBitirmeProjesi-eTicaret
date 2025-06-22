@@ -4,11 +4,13 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import Blank from 'apps/admin/src/components/blank';
 import { FlexiToastService } from 'flexi-toast';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   imports: [
     Blank,
-    FormsModule
+    FormsModule,
+    NgxMaskDirective
   ],
   templateUrl: './create.html',
   encapsulation: ViewEncapsulation.None,

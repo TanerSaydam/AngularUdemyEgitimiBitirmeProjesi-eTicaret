@@ -3647,3 +3647,7 @@ body.login-page::before {
         height: 36px;
     }
 }
+
+.form-control, .form-select {
+    background-color: white !important;
+}
