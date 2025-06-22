@@ -3651,3 +3651,7 @@ body.login-page::before {
 .form-control, .form-select {
     background-color: white !important;
 }
+
+.sidebar-search-input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
