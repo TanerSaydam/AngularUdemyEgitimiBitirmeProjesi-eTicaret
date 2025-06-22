@@ -6,8 +6,18 @@
     captionTitle="Ürün Listesi"
     [showExportExcelBtn]="true"
     language="tr"
+    exportExcelFileName="products"
     (onRefresh)="result.reload()"
 >
+    <ng-template flexiGridCaptionCommandTemplate>
+        <flexi-button
+            routerLink="/products/create"
+            btnIcon="add"
+            btnColor="primary"
+            title="Ürün Ekle"
+            flexiTooltip />
+    </ng-template>
+
     <flexi-grid-column field="imageUrl" title="Ürün Resmi" textAlign="center" [filterable]="false" width="70px">
         <ng-template flexiGridCellTemplate let-item>
             <img [src]="item.imageUrl" width="70" height="70" style="object-fit: contain;" />

@@ -1,0 +1,41 @@
+<app-blank pageTitle="Ürün Ekle" [breadcrumbs]="[
+    {title: 'Ürünler', url: '/products', icon: 'deployed_code'},
+    {title: 'Ekle', url: '/products/create', icon: 'add'},
+    ]" />
+
+<div class="row">
+    <div class="col-md-4 col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Ürün Ekle</h4>
+            </div>
+            <div class="card-body">
+                <form #form="ngForm" autocomplete="off" (ngSubmit)="save(form)">
+                    <div class="form-group">
+                        <label>Ürün Adı</label>
+                        <input type="text" class="form-control" ngModel name="name">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label>Ürün Resmi</label>
+                        <input type="text" class="form-control" ngModel name="imageUrl">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label>Birim Fiyatı</label>
+                        <input type="text" class="form-control" ngModel name="price">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label>Stok Adedi</label>
+                        <input type="text" class="form-control" ngModel name="stock">
+                    </div>
+
+                    <div class="form-group mt-2 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, signal, ViewEncapsulation
 import Blank from '../../components/blank';
 import { FlexiGridFilterDataModel, FlexiGridModule } from 'flexi-grid';
 import { httpResource } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 export interface ProductModel{
   id: string;
@@ -16,7 +17,8 @@ export interface ProductModel{
 @Component({
   imports: [
     Blank,
-    FlexiGridModule
+    FlexiGridModule,
+    RouterLink
   ],
   templateUrl: './products.html',
   encapsulation: ViewEncapsulation.None,
