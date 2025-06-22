@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { navigations } from '../../navigation';
 import { NavPipe } from '../../pipes/nav-pipe';
 import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   imports: [
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
     RouterLink,
     RouterLinkActive,
     NavPipe,
-    FormsModule
+    FormsModule,
+    DatePipe
   ],
   templateUrl: './layouts.html',
   encapsulation: ViewEncapsulation.None,
@@ -19,5 +21,12 @@ import { FormsModule } from '@angular/forms';
 })
 export default class Layouts {
   readonly search = signal<string>("");
+  readonly time = signal<Date | string>("");
   readonly navigations = computed(() => navigations);
+
+  constructor(){
+    setInterval(() => {
+      this.time.set(new Date())
+    },1000);
+  }
 }
