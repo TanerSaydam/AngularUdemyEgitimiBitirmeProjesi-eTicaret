@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal, ViewEncapsulation } from '@angular/core';
 import Blank from '../../components/blank';
 import { FlexiGridFilterDataModel, FlexiGridModule } from 'flexi-grid';
-import { httpResource } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { FlexiToastService } from 'flexi-toast';
 
@@ -38,10 +38,13 @@ export default class Products {
   ]);
 
   readonly #toast = inject(FlexiToastService);
+  readonly #http = inject(HttpClient);
 
   delete(id: string){
     this.#toast.showSwal("Ürünü Sil?","Ürünü silmek istiyor musunuz?","Sil",() => {
-      this.result.reload();
+      this.#http.delete(`http://localhost:3000/products/${id}`).subscribe(res => {
+        this.result.reload();
+      });
     });
   }
 }

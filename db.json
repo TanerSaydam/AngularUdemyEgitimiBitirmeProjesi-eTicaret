@@ -8,13 +8,6 @@
       "stock": 15,
       "categoryId": "233",
       "categoryName": "Telefon"
-    },
-    {
-      "id": "a961",
-      "name": "Domates",
-      "imageUrl": "domates resmi",
-      "price": "100",
-      "stock": "5"
     }
   ]
 }
