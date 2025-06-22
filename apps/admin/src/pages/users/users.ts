@@ -19,14 +19,11 @@ export interface UserModel{
 export const initialUser:UserModel = {
   firstName: "",
   lastName: "",
+  fullName: "",
   userName: "",
   email: "",
   password: "",
   isAdmin: false,
-
-  get fullName(): string {
-    return `${this.firstName} ${this.lastName}`;
-  }
 }
 
 @Component({

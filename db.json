@@ -46,5 +46,16 @@
       "name": "Temizlik Aletleri"
     }
   ],
-  "users":[]
+  "users": [
+    {
+      "id": "a026",
+      "firstName": "Taner",
+      "lastName": "Saydam",
+      "fullName": "Taner Saydam",
+      "userName": "taner",
+      "email": "tanersaydam@gmail.com",
+      "password": "1",
+      "isAdmin": true
+    }
+  ]
 }

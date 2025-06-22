@@ -21,18 +21,23 @@ exportExcelFileName="kullanicilar"
           flexiTooltip />
     </ng-template>
 
-    <flexi-grid-column field="firstName" title="Kullanıcı Adı" />
-    <flexi-grid-column field="lastName" title="Kullanıcı Soyadı" />
-    <flexi-grid-column field="fullName" title="Kullanıcı Tam Adı" />
-    <flexi-grid-column field="userName" title="User Name" />
-    <flexi-grid-column field="Email" title="Mail Adresi" />
-    <flexi-grid-column field="isAdmin" title="Admin Mi?" textAlign="center" filterType="boolean" [booleanData]="['Admin', 'Admin Değil']">
+    <flexi-grid-column field="firstName" title="Ad" />
+    <flexi-grid-column field="lastName" title="Soyad" />
+    <flexi-grid-column field="fullName" title="Tam Adı" />
+    <flexi-grid-column field="userName" title="Kullanıcı Adı" />
+    <flexi-grid-column field="email" title="Mail Adresi" />
+    <flexi-grid-column field="isAdmin" title="Admin Mi?" textAlign="center" filterType="boolean" [booleanData]="['Admin', 'Admin Değil']" textAlign="center">
         <ng-template flexiGridCellTemplate let-item>
-            <input
-              type="checkbox"
-              [checked]="item.isAdmin"
-              class="form-control"
-              [name]="item.id">
+          <div class="d-flex justify-content-center">
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                [id]="item.id"
+                [checked]="item.isAdmin">
+            </div>
+          </div>
         </ng-template>
     </flexi-grid-column>
 
