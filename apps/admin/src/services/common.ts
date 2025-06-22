@@ -5,7 +5,7 @@ import { BreadcrumbModel } from '../pages/layouts/breadcrumb';
   providedIn: 'root'
 })
 export class Common {
-  data:BreadcrumbModel[] = [];
+  readonly data = signal<BreadcrumbModel[]>([]);
 
   set(data:BreadcrumbModel[]){
     const val: BreadcrumbModel = {
@@ -13,10 +13,6 @@ export class Common {
       icon: "home",
       url: "/"
     }
-    this.data = data;
-    this.data.unshift(val);
-
-    console.log(this.data);
-    
+    this.data.set([val, ...data]);
   }
 }
