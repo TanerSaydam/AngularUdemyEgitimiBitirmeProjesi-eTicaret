@@ -4,6 +4,7 @@ import Blank from '../../components/blank';
 import { FlexiGridModule } from 'flexi-grid';
 import { RouterLink } from '@angular/router';
 import { FlexiToastService } from 'flexi-toast';
+import { FormsModule } from '@angular/forms';
 
 export interface UserModel{
   id?: string;
@@ -30,7 +31,8 @@ export const initialUser:UserModel = {
   imports: [
     Blank,
     FlexiGridModule,
-    RouterLink
+    RouterLink,
+    FormsModule
   ],
   templateUrl: './users.html',
   encapsulation: ViewEncapsulation.None,
@@ -50,5 +52,11 @@ export default class Users {
         this.result.reload();
       })
     })
+  }
+
+  changeIsAdmin(data:UserModel){
+    this.#http.put(`api/users/${data.id}`,data).subscribe(() => {
+      this.result.reload();
+    });
   }
 }

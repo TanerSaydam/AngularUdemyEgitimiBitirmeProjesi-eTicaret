@@ -31,11 +31,14 @@ exportExcelFileName="kullanicilar"
           <div class="d-flex justify-content-center">
             <div class="form-check form-switch">
               <input
+                (change)="changeIsAdmin(item)"
                 class="form-check-input"
                 type="checkbox"
                 role="switch"
                 [id]="item.id"
-                [checked]="item.isAdmin">
+                [(ngModel)]="item.isAdmin"
+                [name]="item.id"
+                >
             </div>
           </div>
         </ng-template>
