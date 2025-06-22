@@ -1,1 +1,414 @@
-<p>home works!</p>
+<div class="page-header d-flex justify-content-between align-items-center">
+    <h1 class="page-title">Dashboard</h1>
+    <div class="d-flex header-actions">
+        <button class="btn btn-sm btn-outline-secondary me-2">
+            <span class="material-symbols-outlined">file_download</span> Export
+        </button>
+        <button class="btn btn-sm btn-primary">
+            <span class="material-symbols-outlined">refresh</span> Refresh
+        </button>
+    </div>
+</div>
+
+<!-- Stats Cards Row -->
+<div class="row g-3 mb-4">
+    <div class="col-md-6 col-lg-3">
+        <div class="card stat-card h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h6 class="card-subtitle text-muted">Total Revenue</h6>
+                        <h4 class="card-title mt-2">$24,580</h4>
+                        <div class="stat-change positive">
+                            <span class="material-symbols-outlined">trending_up</span>
+                            <span>+12.5%</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon bg-primary-light">
+                        <span class="material-symbols-outlined text-primary">attach_money</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card stat-card h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h6 class="card-subtitle text-muted">Total Orders</h6>
+                        <h4 class="card-title mt-2">1,352</h4>
+                        <div class="stat-change positive">
+                            <span class="material-symbols-outlined">trending_up</span>
+                            <span>+8.3%</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon bg-success-light">
+                        <span class="material-symbols-outlined text-success">shopping_cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card stat-card h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h6 class="card-subtitle text-muted">New Customers</h6>
+                        <h4 class="card-title mt-2">132</h4>
+                        <div class="stat-change positive">
+                            <span class="material-symbols-outlined">trending_up</span>
+                            <span>+15.7%</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon bg-info-light">
+                        <span class="material-symbols-outlined text-info">person_add</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card stat-card h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h6 class="card-subtitle text-muted">Conversion Rate</h6>
+                        <h4 class="card-title mt-2">24.8%</h4>
+                        <div class="stat-change negative">
+                            <span class="material-symbols-outlined">trending_down</span>
+                            <span>-2.1%</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon bg-warning-light">
+                        <span class="material-symbols-outlined text-warning">auto_graph</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Orders & Activity Row -->
+<div class="row g-3 mb-4">
+    <!-- Recent Orders -->
+    <div class="col-lg-8">
+        <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Recent Orders</h5>
+                <a href="#" class="btn btn-sm btn-link">View All</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover orders-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Order</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-7532</td>
+                                <td>John Smith</td>
+                                <td><span class="badge bg-success">Completed</span></td>
+                                <td>Apr 21, 2025</td>
+                                <td>$142.25</td>
+                                <td>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">visibility</span></button>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">edit</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-7531</td>
+                                <td>Emily Johnson</td>
+                                <td><span class="badge bg-warning text-dark">Processing</span></td>
+                                <td>Apr 20, 2025</td>
+                                <td>$356.00</td>
+                                <td>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">visibility</span></button>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">edit</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-7530</td>
+                                <td>Michael Brown</td>
+                                <td><span class="badge bg-success">Completed</span></td>
+                                <td>Apr 19, 2025</td>
+                                <td>$87.50</td>
+                                <td>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">visibility</span></button>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">edit</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-7529</td>
+                                <td>Sarah Williams</td>
+                                <td><span class="badge bg-danger">Cancelled</span></td>
+                                <td>Apr 18, 2025</td>
+                                <td>$213.95</td>
+                                <td>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">visibility</span></button>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">edit</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-7528</td>
+                                <td>Robert Davis</td>
+                                <td><span class="badge bg-primary">Shipped</span></td>
+                                <td>Apr 17, 2025</td>
+                                <td>$451.75</td>
+                                <td>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">visibility</span></button>
+                                    <button class="btn btn-sm btn-icon"><span
+                                            class="material-symbols-outlined">edit</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="col-lg-4">
+        <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Recent Activity</h5>
+                <a href="#" class="btn btn-sm btn-link">View All</a>
+            </div>
+            <div class="card-body">
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon bg-primary">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">New order received</div>
+                            <div class="activity-subtitle">Order #ORD-7532</div>
+                            <div class="activity-time">10 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon bg-success">
+                            <span class="material-symbols-outlined">payments</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Payment received</div>
+                            <div class="activity-subtitle">From Emily Johnson</div>
+                            <div class="activity-time">25 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon bg-warning">
+                            <span class="material-symbols-outlined">inventory</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Low stock alert</div>
+                            <div class="activity-subtitle">Item #PRD-235 (Wireless Earbuds)</div>
+                            <div class="activity-time">1 hour ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon bg-info">
+                            <span class="material-symbols-outlined">person_add</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">New customer registered</div>
+                            <div class="activity-subtitle">Robert Davis</div>
+                            <div class="activity-time">3 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon bg-danger">
+                            <span class="material-symbols-outlined">assignment_return</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Product return requested</div>
+                            <div class="activity-subtitle">Order #ORD-7520</div>
+                            <div class="activity-time">5 hours ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Top Products & Customers Row -->
+<div class="row g-3">
+    <!-- Top Products -->
+    <div class="col-lg-6">
+        <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Top Products</h5>
+                <a href="#" class="btn btn-sm btn-link">View All</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table products-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Sales</th>
+                                <th scope="col">Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="product-img me-2 bg-light rounded">
+                                            <span class="material-symbols-outlined text-primary">smartphone</span>
+                                        </div>
+                                        <div>Smartphone Pro 12</div>
+                                    </div>
+                                </td>
+                                <td>Electronics</td>
+                                <td>425</td>
+                                <td>$127,500</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="product-img me-2 bg-light rounded">
+                                            <span class="material-symbols-outlined text-success">headphones</span>
+                                        </div>
+                                        <div>Wireless Earbuds</div>
+                                    </div>
+                                </td>
+                                <td>Audio</td>
+                                <td>352</td>
+                                <td>$28,160</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="product-img me-2 bg-light rounded">
+                                            <span class="material-symbols-outlined text-warning">watch</span>
+                                        </div>
+                                        <div>Smart Watch Series 5</div>
+                                    </div>
+                                </td>
+                                <td>Wearable</td>
+                                <td>287</td>
+                                <td>$71,750</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="product-img me-2 bg-light rounded">
+                                            <span class="material-symbols-outlined text-info">laptop_mac</span>
+                                        </div>
+                                        <div>Ultrabook X1</div>
+                                    </div>
+                                </td>
+                                <td>Computers</td>
+                                <td>156</td>
+                                <td>$187,200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Customers -->
+    <div class="col-lg-6">
+        <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Top Customers</h5>
+                <a href="#" class="btn btn-sm btn-link">View All</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table customers-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Orders</th>
+                                <th scope="col">Spent</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar me-2">
+                                            <img src="https://ui-avatars.com/api/?name=John+Smith&background=4361ee&color=fff"
+                                                alt="John Smith">
+                                        </div>
+                                        <div>John Smith</div>
+                                    </div>
+                                </td>
+                                <td>42</td>
+                                <td>$5,125</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar me-2">
+                                            <img src="https://ui-avatars.com/api/?name=Emily+Johnson&background=10b981&color=fff"
+                                                alt="Emily Johnson">
+                                        </div>
+                                        <div>Emily Johnson</div>
+                                    </div>
+                                </td>
+                                <td>35</td>
+                                <td>$4,780</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar me-2">
+                                            <img src="https://ui-avatars.com/api/?name=Michael+Brown&background=f59e0b&color=fff"
+                                                alt="Michael Brown">
+                                        </div>
+                                        <div>Michael Brown</div>
+                                    </div>
+                                </td>
+                                <td>28</td>
+                                <td>$3,650</td>
+                                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar me-2">
+                                            <img src="https://ui-avatars.com/api/?name=Sarah+Williams&background=ef4444&color=fff"
+                                                alt="Sarah Williams">
+                                        </div>
+                                        <div>Sarah Williams</div>
+                                    </div>
+                                </td>
+                                <td>23</td>
+                                <td>$2,980</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
