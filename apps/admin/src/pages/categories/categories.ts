@@ -4,6 +4,7 @@ import Blank from '../../components/blank';
 import { FlexiGridModule } from 'flexi-grid';
 import { RouterLink } from '@angular/router';
 import { FlexiToastService } from 'flexi-toast';
+import { api } from '../../constants';
 
 export interface CategoryModel{
   id?: string;
@@ -25,7 +26,7 @@ export const initialCategory: CategoryModel = {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class Categories {
-  readonly result = httpResource<CategoryModel[]>(() => "http://localhost:3000/categories");
+  readonly result = httpResource<CategoryModel[]>(() => `api/categories`);
 
   readonly data = computed(() => this.result.value() ?? []);
   readonly loading = computed(() => this.result.isLoading());
@@ -35,7 +36,7 @@ export default class Categories {
 
   delete(id: string){
     this.#toast.showSwal("Kategori sil?", "Kategoriyi silmek istiyor musunuz?","Sil",() => {
-      this.#http.delete(`http://localhost:3000/categories/${id}`).subscribe(()=> {
+      this.#http.delete(`api/categories/${id}`).subscribe(()=> {
         this.result.reload();
       });
     })

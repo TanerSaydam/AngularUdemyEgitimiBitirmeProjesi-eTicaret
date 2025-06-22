@@ -35,7 +35,7 @@ export const initialProduct: ProductModel = {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class Products {
-  readonly result = httpResource<ProductModel[]>(() => "http://localhost:3000/products");
+  readonly result = httpResource<ProductModel[]>(() => "api/products");
   readonly data = computed(() => this.result.value() ?? []);
   readonly loading = computed(() => this.result.isLoading());
 
@@ -51,7 +51,7 @@ export default class Products {
 
   delete(id: string){
     this.#toast.showSwal("Ürünü Sil?","Ürünü silmek istiyor musunuz?","Sil",() => {
-      this.#http.delete(`http://localhost:3000/products/${id}`).subscribe(res => {
+      this.#http.delete(`api/products/${id}`).subscribe(res => {
         this.result.reload();
       });
     });

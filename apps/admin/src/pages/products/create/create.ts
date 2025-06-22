@@ -24,7 +24,7 @@ export default class ProductCreate {
     params: () => this.id(),
     loader: async () => {
       var res = await lastValueFrom(
-        this.#http.get<ProductModel>(`http://localhost:3000/products/${this.id()}`)
+        this.#http.get<ProductModel>(`api/products/${this.id()}`)
       );
       return res;
     }
