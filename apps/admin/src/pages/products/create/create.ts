@@ -30,7 +30,7 @@ export default class ProductCreate {
     }
   })
 
-  readonly data = linkedSignal(() => this.result.value() ?? initialProduct);
+  readonly data = computed(() => this.result.value() ?? {...initialProduct});
   readonly cardTitle = computed(() => this.id() ? 'Ürün Güncelle' : 'Ürün Ekle');
   readonly btnName = computed(() => this.id() ? 'Güncelle' : 'Kaydet');
 
@@ -54,13 +54,11 @@ export default class ProductCreate {
       this.#http.post("http://localhost:3000/products", this.data()).subscribe(() => {
         this.#router.navigateByUrl("/products");
         this.#toast.showToast("Başarılı","Ürün başarıyla eklendi","success");
-        this.data.set(initialProduct);
       });
     }else{
       this.#http.put(`http://localhost:3000/products/${this.id()}`, this.data()).subscribe(() => {
         this.#router.navigateByUrl("/products");
         this.#toast.showToast("Başarılı","Ürün başarıyla güncellendi","info");
-        this.data.set(initialProduct);
       });
     }
   }

@@ -30,8 +30,16 @@
   ],
   "categories": [
     {
-      "id": "12dd",
+      "id": "746c",
+      "name": "Telefon"
+    },
+    {
+      "id": "8507",
       "name": "Bilgisayar"
+    },
+    {
+      "id": "53ef",
+      "name": "Akıllı Saat"
     }
   ]
 }

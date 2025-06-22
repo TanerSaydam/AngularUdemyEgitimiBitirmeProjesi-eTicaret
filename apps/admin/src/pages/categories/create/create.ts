@@ -31,7 +31,7 @@ export default class CreateCategory {
       return res;
     }
   })
-  readonly data = linkedSignal(() => this.result.value() ?? initialCategory);
+  readonly data = computed(() => this.result.value() ?? {...initialCategory});
 
   readonly #http = inject(HttpClient);
   readonly #toast = inject(FlexiToastService);
@@ -42,8 +42,6 @@ export default class CreateCategory {
     this.#activated.params.subscribe((res) => {
       if(res['id']){
         this.id.set(res['id']);
-      }else{
-        this.data.set(initialCategory);
       }
     });
   }
