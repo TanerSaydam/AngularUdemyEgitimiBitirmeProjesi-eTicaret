@@ -32,6 +32,30 @@
       "linter": "eslint",
       "style": "css",
       "unitTestRunner": "none"
+    },
+    "@schematics/angular:component": {
+      "changeDetection": "OnPush",
+      "viewEncapsulation": "None",
+      "style": "none",
+      "skipTests": true,
+      "skipSelector": true,
+      "exportDefault": true
+    },
+    "@schematics/angular:service": {
+      "skipTests": true
+    },
+    "@schematics/angular:pipe": {
+      "skipTests": true
+    },
+    "@schematics/angular:directive": {
+      "skipTests": true
+    },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "none"
+    },
+    "@nx/angular:component": {
+      "style": "css"
     }
   }
 }
