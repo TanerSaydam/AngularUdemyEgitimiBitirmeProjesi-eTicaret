@@ -3116,3 +3116,7 @@ hr {
     min-width: 15px;
     text-align: center;
 }
+
+.cursor{
+    cursor: pointer;
+}

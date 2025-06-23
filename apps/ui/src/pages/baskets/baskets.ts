@@ -4,10 +4,12 @@ import { Common } from '../../services/common';
 import { BasketModel } from '@shared/models/basket.model';
 import { TrCurrencyPipe } from 'tr-currency';
 import { FlexiToastService } from 'flexi-toast';
+import { RouterLink } from '@angular/router';
 
 @Component({
   imports: [
-    TrCurrencyPipe
+    TrCurrencyPipe,
+    RouterLink
   ],
   templateUrl: './baskets.html',
   encapsulation: ViewEncapsulation.None,
