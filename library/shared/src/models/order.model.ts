@@ -3,6 +3,8 @@ import { BasketModel } from "./basket.model";
 export interface OrderModel {
     id?: string;
     userId: string;
+    orderNumber:string;
+    date: Date;
     fullName: string;
     phoneNumber: string;
     city: string;
@@ -19,6 +21,8 @@ export interface OrderModel {
 
 export const initialOrder: OrderModel = {
     userId: "",
+    orderNumber: "",
+    date: new Date(),
     fullName: "",
     phoneNumber: "",
     city: "",
@@ -27,8 +31,8 @@ export const initialOrder: OrderModel = {
     cartNumber: "",
     cartOwnerName: "",
     expiresDate: "",
-    cvv: 0,
-    installmentOptions: "",
-    status: "Onay Bekliyor",
+    cvv: 300,
+    installmentOptions: "Tek Çekim",
+    status: "Hazırlanıyor",
     baskets: []
 }

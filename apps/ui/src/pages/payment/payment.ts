@@ -6,12 +6,18 @@ import { BasketModel } from '@shared/models/basket.model';
 import { TrCurrencyPipe } from 'tr-currency';
 import { OrderModel, initialOrder } from '@shared/models/order.model';
 import { FormsModule, NgForm } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { NgxMaskDirective } from 'ngx-mask';
+import { lastValueFrom } from 'rxjs';
+import { FlexiToastService } from 'flexi-toast';
 
 @Component({
   imports: [
     RouterLink,
     TrCurrencyPipe,
-    FormsModule
+    FormsModule,
+    DatePipe,
+    NgxMaskDirective
   ],
   templateUrl: './payment.html',
   encapsulation: ViewEncapsulation.None,
@@ -29,11 +35,13 @@ export default class Payment {
     return val;
   });
   readonly kdv = computed(() => this.total() * 18 / 100);
-  readonly data = signal<OrderModel>(initialOrder);
+  readonly data = signal<OrderModel>({...initialOrder});
   readonly showSuccessPart = signal<boolean>(false);
+  readonly term = signal<boolean>(false);
 
   readonly #common = inject(Common);
   readonly #http = inject(HttpClient);
+  readonly #toast = inject(FlexiToastService);
 
   pay(form: NgForm){
     if(!form.valid) return;
@@ -41,10 +49,17 @@ export default class Payment {
     this.data.update(prev => ({
       ...prev,
       userId: this.#common.user()!.id!,
+      orderNumber: `TS-${new Date().getFullYear()}-${new Date().getTime()}`,
+      date: new Date(),
       baskets: [...this.baskets()]
     }));
-    this.#http.post("api/orders", this.data()).subscribe(res => {
 
+    this.#http.post("api/orders", this.data()).subscribe(res => {
+      this.showSuccessPart.set(true);
+      this.baskets().forEach(val => {
+        this.#http.delete(`api/baskets/${val.id}`).subscribe();
+      })
+      this.#common.basketCount.set(0);
     });
   }
 }
