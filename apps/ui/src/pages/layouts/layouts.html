@@ -5,11 +5,11 @@
             <h2>TechStore</h2>
         </div>
         <ul class="nav-menu">
-            <li><a href="#" class="nav-link">Telefon</a></li>
-            <li><a href="#" class="nav-link">Laptop</a></li>
-            <li><a href="#" class="nav-link">Tablet</a></li>
-            <li><a href="#" class="nav-link">Aksesuar</a></li>
-            <li><a href="#" class="nav-link">Oyun</a></li>
+            @for(val of data(); track val.id){
+                <li>
+                    <a class="nav-link">{{val.name}}</a>
+                </li>
+            }
         </ul>
         <div class="nav-icons">
             <i class="fas fa-search"></i>

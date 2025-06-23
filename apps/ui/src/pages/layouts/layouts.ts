@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { httpResource } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, computed, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CategoryModel } from '@shared/models/category.model';
 
 @Component({
   imports: [
@@ -10,5 +12,6 @@ import { RouterOutlet } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class Layouts {
-
+  readonly result = httpResource<CategoryModel[]>(() => "api/categories");
+  readonly data = computed(() => this.result.value() ?? []);
 }
