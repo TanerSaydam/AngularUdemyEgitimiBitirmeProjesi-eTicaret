@@ -8,7 +8,7 @@
       "stock": 15,
       "categoryId": "746c",
       "categoryName": "Telefon",
-      "categoryUrl":"telefon"
+      "categoryUrl": "telefon"
     },
     {
       "id": "124",
@@ -18,7 +18,7 @@
       "stock": "10",
       "categoryId": "8507",
       "categoryName": "Bilgisayar",
-      "categoryUrl":"bilgisayar"
+      "categoryUrl": "bilgisayar"
     },
     {
       "id": "125",
@@ -28,7 +28,7 @@
       "stock": "3",
       "categoryId": "53ef",
       "categoryName": "Akıllı Saat",
-      "categoryUrl":"akilli-saat"
+      "categoryUrl": "akilli-saat"
     }
   ],
   "categories": [
@@ -68,6 +68,16 @@
       "email": "tanersaydam@gmail.com",
       "password": "1",
       "isAdmin": true
+    },
+    {
+      "id": "7d09",
+      "firstName": "Toprak",
+      "lastName": "Saydam",
+      "fullName": "Toprak Saydam",
+      "userName": "toprak",
+      "email": "toprak@toprak.com",
+      "password": "1",
+      "isAdmin": false
     }
   ]
 }
