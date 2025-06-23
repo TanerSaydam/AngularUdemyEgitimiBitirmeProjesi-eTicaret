@@ -26,9 +26,9 @@
                                 </div>
                             </div>
                             <div class="quantity-controls">
-                                <button class="qty-btn minus">-</button>
+                                <button class="qty-btn minus" (click)="decrement(val)">-</button>
                                 <span class="quantity">{{val.quantity}}</span>
-                                <button class="qty-btn plus">+</button>
+                                <button class="qty-btn plus" (click)="increment(val)">+</button>
                             </div>
                             <div class="item-price">
                                 <span class="price">{{(val.productPrice * val.quantity) | trCurrency:'₺':false}}</span>
