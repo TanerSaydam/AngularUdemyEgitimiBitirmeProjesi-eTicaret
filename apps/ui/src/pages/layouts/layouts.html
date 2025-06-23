@@ -1,13 +1,13 @@
 <!-- Navbar -->
 <nav class="navbar">
     <div class="nav-container">
-        <div class="nav-logo" routerLink="/">
+        <div class="nav-logo" routerLink="/" style="cursor: pointer;">
             <h2>TechStore</h2>
         </div>
         <ul class="nav-menu">
             @for(val of data(); track val.id){
                 <li>
-                    <a [routerLink]="['/',val.id]" class="nav-link">{{val.name}}</a>
+                    <a [routerLink]="['/','products',val.url]" class="nav-link">{{val.name}}</a>
                 </li>
             }
         </ul>

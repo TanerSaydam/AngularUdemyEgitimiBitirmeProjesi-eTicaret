@@ -15,14 +15,14 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class Home {
-  readonly categoryKey = signal<string | undefined>(undefined);
-  readonly categoryKeyPrev = this.computedPrevious(this.categoryKey);
+  readonly categoryUrl = signal<string | undefined>(undefined);
+  readonly categoryUrlPrev = this.computedPrevious(this.categoryUrl);
   readonly limit = signal<number>(6);
   readonly start = signal<number>(0);
   readonly result = httpResource<ProductModel[]>(() => {
     let endpoint = 'api/products?';
-    if (this.categoryKey()) {
-      endpoint += `categoryId=${this.categoryKey()}&`;
+    if (this.categoryUrl()) {
+      endpoint += `categoryUrl=${this.categoryUrl()}&`;
     }
     endpoint += `_limit=${this.limit()}&_start=${this.start()}`;
 
@@ -35,13 +35,13 @@ export default class Home {
 
   constructor() {
     this.#activated.params.subscribe(res => {
-      if (res['categoryKey']) {
-        this.categoryKey.set(res['categoryKey']);
+      if (res['categoryUrl']) {
+        this.categoryUrl.set(res['categoryUrl']);
       }
     });
 
     effect(() => {
-      if (this.categoryKeyPrev() !== this.categoryKey()) {
+      if (this.categoryUrlPrev() !== this.categoryUrl()) {
         this.dataSignal.set([...this.data()]);
         this.limit.set(6);
         this.start.set(0);
