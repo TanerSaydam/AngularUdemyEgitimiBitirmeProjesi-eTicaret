@@ -1,0 +1,128 @@
+ <section class="orders-section">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="header-content">
+                    <h1><i class="fas fa-box"></i> Siparişlerim</h1>
+                    <p>Tüm siparişlerinizi buradan takip edebilirsiniz</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">{{totalCount()}}</span>
+                        <span class="stat-label">Toplam Sipariş</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{waitingCount()}}</span>
+                        <span class="stat-label">Beklemede</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{completedCount()}}</span>
+                        <span class="stat-label">Tamamlanan</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter and Search -->
+            <div class="orders-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Sipariş no, ürün adı ara...">
+                </div>
+                <div class="filter-controls">
+                    <select class="filter-select" id="statusFilter">
+                        <option value="">Tüm Durumlar</option>
+                        <option value="pending">Hazırlanıyor</option>
+                        <option value="shipped">Kargoda</option>
+                        <option value="delivered">Teslim Edildi</option>
+                        <option value="cancelled">İptal Edildi</option>
+                    </select>
+                    <select class="filter-select" id="timeFilter">
+                        <option value="">Tüm Zamanlar</option>
+                        <option value="week">Son 1 Hafta</option>
+                        <option value="month">Son 1 Ay</option>
+                        <option value="3months">Son 3 Ay</option>
+                        <option value="year">Son 1 Yıl</option>
+                    </select>
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i>
+                        Filtrele
+                    </button>
+                </div>
+            </div>
+
+            <!-- Orders List -->
+            <div class="orders-list">
+                @for(val of data(); track val.id){
+                    <div class="order-card" data-status="pending">
+                        <div class="order-header">
+                            <div class="order-info">
+                                <h3>Sipariş #{{val.orderNumber}}</h3>
+                                <span class="order-date">{{val.date | date:'dd MMMM yyyy HH:mm'}}</span>
+                            </div>
+                            <div class="order-status">
+                                @if(val.status === 'Hazırlanıyor'){
+                                    <span class="status-badge pending">
+                                        <i class="fas fa-clock"></i>
+                                        {{val.status}}
+                                    </span>
+                                }@else if(val.status === 'Kargoda'){
+                                    <span class="status-badge shipped">
+                                        <i class="fas fa-truck"></i>
+                                        {{val.status}}
+                                    </span>
+                                }@else if(val.status === 'Teslim Edildi'){
+                                    <span class="status-badge delivered">
+                                        <i class="fas fa-check-circle"></i>
+                                        {{val.status}}
+                                    </span>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="order-items">
+                            @for(d of val.baskets; track d.id){
+                                <div class="order-item">
+                                    <img [src]="d.productImageUrl" [alt]="d.productName">
+                                    <div class="item-details">
+                                        <h4>{{d.productName}}</h4>
+                                        <span class="quantity">Adet: {{d.quantity}}</span>
+                                    </div>
+                                    <span class="item-price">
+                                        {{(d.quantity * d.productPrice) | trCurrency:'₺':false}}
+                                    </span>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="order-footer">
+                            <div class="order-total">
+                                <span>Toplam: <strong>{{(total()) | trCurrency:'₺':false}}</strong></span>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                    Detaylar
+                                </button>
+                                @if(val.status === 'Kargoda'){
+                                    <button class="btn-primary">
+                                        <i class="fas fa-truck"></i>
+                                        Kargo Takip
+                                    </button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @if(limit() < totalCount()){
+                    <!-- Load More Button -->
+                    <div class="load-more">
+                        <button class="load-more-btn" (click)="showMore()">
+                            <i class="fas fa-plus"></i>
+                            Daha Fazla Sipariş Yükle
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>

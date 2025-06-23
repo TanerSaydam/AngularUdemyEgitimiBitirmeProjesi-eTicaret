@@ -163,7 +163,7 @@
       "expiresDate": "20/85",
       "cvv": "855",
       "installmentOptions": "Tek Çekim",
-      "status": "Hazırlanıyor",
+      "status": "Kargoda",
       "baskets": [
         {
           "id": "28cb",
@@ -200,7 +200,7 @@
       "expiresDate": "20/85",
       "cvv": "855",
       "installmentOptions": "Tek Çekim",
-      "status": "Hazırlanıyor",
+      "status": "Teslim Edildi",
       "baskets": [
         {
           "id": "28cb",
@@ -237,7 +237,7 @@
       "expiresDate": "20/35",
       "cvv": "855",
       "installmentOptions": "9 Taksit",
-      "status": "Hazırlanıyor",
+      "status": "Teslim Edildi",
       "baskets": [
         {
           "id": "28cb",
@@ -274,7 +274,7 @@
       "expiresDate": "asdas",
       "cvv": 300,
       "installmentOptions": "Tek Çekim",
-      "status": "Hazırlanıyor",
+      "status": "Teslim Edildi",
       "baskets": [
         {
           "id": "d924",
