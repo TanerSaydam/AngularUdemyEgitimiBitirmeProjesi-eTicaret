@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { Common } from '../services/common';
-import { UserModel } from '../pages/users/users';
+import { UserModel } from '@shared/models/user.model';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const res = localStorage.getItem("response");

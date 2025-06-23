@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { BreadcrumbModel } from '../pages/layouts/breadcrumb';
-import { UserModel } from '../pages/users/users';
+import { UserModel } from '@shared/models/user.model';
 
 @Injectable({
   providedIn: 'root'

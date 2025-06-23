@@ -26,6 +26,141 @@
       "stock": "3",
       "categoryId": "53ef",
       "categoryName": "Akıllı Saat"
+    },
+    {
+      "id": "123",
+      "imageUrl": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313241770/1698313246580/1698313246580_600x450.png?1749680495000",
+      "name": "Iphone 15 Pro2",
+      "price": 100000,
+      "stock": 15,
+      "categoryId": "746c",
+      "categoryName": "Telefon"
+    },
+    {
+      "id": "124",
+      "name": "MacBook Air M2",
+      "imageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg",
+      "price": 35499,
+      "stock": "10",
+      "categoryId": "8507",
+      "categoryName": "Bilgisayar"
+    },
+    {
+      "id": "125",
+      "name": "Apple Watch Series 9",
+      "imageUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple-watch-series-9.png",
+      "price": 49950,
+      "stock": "3",
+      "categoryId": "53ef",
+      "categoryName": "Akıllı Saat"
+    },
+    {
+      "id": "123",
+      "imageUrl": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313241770/1698313246580/1698313246580_600x450.png?1749680495000",
+      "name": "Iphone 15 Pro2",
+      "price": 100000,
+      "stock": 15,
+      "categoryId": "746c",
+      "categoryName": "Telefon"
+    },
+    {
+      "id": "124",
+      "name": "MacBook Air M2",
+      "imageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg",
+      "price": 35499,
+      "stock": "10",
+      "categoryId": "8507",
+      "categoryName": "Bilgisayar"
+    },
+    {
+      "id": "125",
+      "name": "Apple Watch Series 9",
+      "imageUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple-watch-series-9.png",
+      "price": 49950,
+      "stock": "3",
+      "categoryId": "53ef",
+      "categoryName": "Akıllı Saat"
+    },
+    {
+      "id": "123",
+      "imageUrl": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313241770/1698313246580/1698313246580_600x450.png?1749680495000",
+      "name": "Iphone 15 Pro2",
+      "price": 100000,
+      "stock": 15,
+      "categoryId": "746c",
+      "categoryName": "Telefon"
+    },
+    {
+      "id": "124",
+      "name": "MacBook Air M2",
+      "imageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg",
+      "price": 35499,
+      "stock": "10",
+      "categoryId": "8507",
+      "categoryName": "Bilgisayar"
+    },
+    {
+      "id": "125",
+      "name": "Apple Watch Series 9",
+      "imageUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple-watch-series-9.png",
+      "price": 49950,
+      "stock": "3",
+      "categoryId": "53ef",
+      "categoryName": "Akıllı Saat"
+    },
+    {
+      "id": "123",
+      "imageUrl": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313241770/1698313246580/1698313246580_600x450.png?1749680495000",
+      "name": "Iphone 15 Pro2",
+      "price": 100000,
+      "stock": 15,
+      "categoryId": "746c",
+      "categoryName": "Telefon"
+    },
+    {
+      "id": "124",
+      "name": "MacBook Air M2",
+      "imageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg",
+      "price": 35499,
+      "stock": "10",
+      "categoryId": "8507",
+      "categoryName": "Bilgisayar"
+    },
+    {
+      "id": "125",
+      "name": "Apple Watch Series 9",
+      "imageUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple-watch-series-9.png",
+      "price": 49950,
+      "stock": "3",
+      "categoryId": "53ef",
+      "categoryName": "Akıllı Saat"
+    },
+    {
+      "id": "123",
+      "imageUrl": "https://ffo3gv1cf3ir.merlincdn.net//SiteAssets/pasaj/crop/cg/1698313241770/1698313246580/1698313246580_600x450.png?1749680495000",
+      "name": "Iphone 15 Pro2",
+      "price": 100000,
+      "stock": 15,
+      "categoryId": "746c",
+      "categoryName": "Telefon"
+    },
+    {
+      "id": "124",
+      "name": "MacBook Air M2",
+      "imageUrl": "https://st-troy.mncdn.com/mnresize/775/775/Content/media/ProductImg/original/mc7x4tua-13-inch-macbook-air-apple-m2-chip-with-8-core-cpu-638661414838395786.jpg",
+      "price": 35499,
+      "stock": "10",
+      "categoryId": "8507",
+      "categoryName": "Bilgisayar"
+    },
+    {
+      "id": "125",
+      "name": "Apple Watch Series 9",
+      "imageUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple-watch-series-9.png",
+      "price": 49950,
+      "stock": "3",
+      "categoryId": "53ef",
+      "categoryName": "Akıllı Saat"
     }
   ],
   "categories": [

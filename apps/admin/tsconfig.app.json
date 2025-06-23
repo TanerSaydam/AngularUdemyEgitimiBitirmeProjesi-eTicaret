@@ -4,7 +4,7 @@
     "outDir": "../../dist/out-tsc",
     "types": []
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "../../library/shared/src/services/error.ts"],
   "exclude": [
     "jest.config.ts",
     "src/test-setup.ts",

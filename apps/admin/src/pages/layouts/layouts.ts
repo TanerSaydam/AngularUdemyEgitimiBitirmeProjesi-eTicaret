@@ -6,7 +6,6 @@ import { NavPipe } from '../../pipes/nav-pipe';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { Common } from '../../services/common';
-import { initialUser } from '../users/users';
 
 @Component({
   imports: [
