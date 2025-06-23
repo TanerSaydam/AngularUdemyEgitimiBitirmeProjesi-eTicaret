@@ -81,6 +81,7 @@ export default class Home {
 
   addBasket(data: ProductModel){
     const basket: BasketModel = {
+      userId: this.#common.user()!.id!,
       productId: data.id!,
       productName: data.name,
       price: data.price,
