@@ -12,22 +12,33 @@
     <div class="container">
         <h2 class="section-title">Ürünler</h2>
         <div class="products-grid">
-            @for(val of dataSignal(); track val.id){
-                <div class="product-card">
-                    <img [src]="val.imageUrl" [alt]="val.name">
-                    <h3>{{val.name}}</h3>
-                    <p class="price">{{val.price | trCurrency:'₺':false}}</p>
-                    <button class="add-to-cart">Sepete Ekle</button>
-                </div>
-            }
+            @if(loading()){
+                @for(val of placeholderCount(); track val){
+                    <div class="product-card placeholder-glow">
+                        <div class="placeholder" style="width: 100%; height: 200px; margin-bottom: 20px;"></div>
+                        <h3 class="placeholder">iPhone 15 Pro</h3>
+                        <p class="price placeholder">45.999 ₺</p>
+                        <button class="add-to-cart placeholder">Sepete Ekle</button>
+                    </div>
+                }
+            }@else{
+                @for(val of dataSignal(); track val.id){
+                    <div class="product-card">
+                        <img [src]="val.imageUrl" [alt]="val.name">
+                        <h3>{{val.name}}</h3>
+                        <p class="price">{{val.price | trCurrency:'₺':false}}</p>
+                        <button class="add-to-cart">Sepete Ekle</button>
+                    </div>
+                }
 
-            <div
-                class="search-results"
-                infiniteScroll
-                [infiniteScrollDistance]="2"
-                [infiniteScrollThrottle]="50"
-                (scrolled)="onScroll()"
-            ></div>
+                <div
+                    class="search-results"
+                    infiniteScroll
+                    [infiniteScrollDistance]="2"
+                    [infiniteScrollThrottle]="50"
+                    (scrolled)="onScroll()"
+                ></div>
+            }
         </div>
     </div>
 </section>

@@ -3084,3 +3084,21 @@ hr {
         right: 45px;
     }
 }
+
+.placeholder {
+    display: inline-block;
+    width: 100%;
+    background-color: currentColor;
+    opacity: 0.5;
+    border-radius: 0.25rem;
+}
+
+.placeholder-glow .placeholder {
+    animation: placeholder-glow 2s ease-in-out infinite;
+}
+
+@keyframes placeholder-glow {
+    50% {
+        opacity: 0.2;
+    }
+}
