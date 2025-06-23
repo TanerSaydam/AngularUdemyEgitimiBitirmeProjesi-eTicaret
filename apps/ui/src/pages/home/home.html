@@ -28,7 +28,7 @@
                         <h3>{{val.name}}</h3>
                         <p class="price">{{val.price | trCurrency:'₺':false}}</p>
                         @if(user()){
-                            <button class="add-to-cart">Sepete Ekle</button>
+                            <button class="add-to-cart" (click)="addBasket(val)">Sepete Ekle</button>
                         }@else {
                             <button class="add-to-cart">Giriş yapmalısınız</button>
                         }

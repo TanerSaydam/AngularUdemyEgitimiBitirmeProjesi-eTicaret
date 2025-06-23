@@ -89,5 +89,63 @@
       "password": "1",
       "isAdmin": false
     }
+  ],
+  "baskets": [
+    {
+      "id": "40f1",
+      "productId": "123",
+      "productName": "Iphone 15 Pro2",
+      "price": 100000,
+      "quantity": 1
+    },
+    {
+      "id": "dd37",
+      "productId": "124",
+      "productName": "MacBook Air M2",
+      "price": 35499,
+      "quantity": 1
+    },
+    {
+      "id": "129f",
+      "productId": "124",
+      "productName": "MacBook Air M2",
+      "price": 35499,
+      "quantity": 1
+    },
+    {
+      "id": "ef3b",
+      "productId": "125",
+      "productName": "Apple Watch Series 9",
+      "price": 49950,
+      "quantity": 1
+    },
+    {
+      "id": "abef",
+      "productId": "125",
+      "productName": "Apple Watch Series 9",
+      "price": 49950,
+      "quantity": 1
+    },
+    {
+      "id": "f048",
+      "productId": "123",
+      "productName": "Iphone 15 Pro2",
+      "price": 100000,
+      "quantity": 1
+    },
+    {
+      "id": "9306",
+      "productId": "124",
+      "productName": "MacBook Air M2",
+      "price": 35499,
+      "quantity": 1
+    },
+    {
+      "id": "cbd1",
+      "productId": "125",
+      "productName": "Apple Watch Series 9",
+      "price": 49950,
+      "quantity": 1
+    }
   ]
 }
