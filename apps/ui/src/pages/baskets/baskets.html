@@ -31,49 +31,49 @@
                                 <button class="qty-btn plus">+</button>
                             </div>
                             <div class="item-price">
-                                <span class="price">{{val.productPrice | trCurrency:'₺':false}}</span>
+                                <span class="price">{{(val.productPrice * val.quantity) | trCurrency:'₺':false}}</span>
                             </div>
                         </div>
                     }
                 </div>
-    
+
                 <!-- Order Summary -->
                 <div class="order-summary">
                     <div class="summary-card">
                         <h3>Sipariş Özeti</h3>
-    
+
                         <div class="summary-row">
                             <span>Ara Toplam:</span>
-                            <span id="subtotal">91.996 ₺</span>
+                            <span id="subtotal">{{total() | trCurrency:'₺':false}}</span>
                         </div>
-    
+
                         <div class="summary-row">
                             <span>Kargo:</span>
                             <span class="free">Ücretsiz</span>
                         </div>
-    
+
                         <div class="summary-row">
                             <span>KDV (18%):</span>
-                            <span id="tax">16.559 ₺</span>
+                            <span id="tax">{{kdv() | trCurrency:'₺':false}}</span>
                         </div>
-    
+
                         <hr>
-    
+
                         <div class="summary-row total">
                             <span>Toplam:</span>
-                            <span id="total">108.555 ₺</span>
+                            <span id="total">{{kdv() + total() | trCurrency:'₺':false}}</span>
                         </div>
-    
+
                         <div class="promo-code">
                             <input type="text" placeholder="Promosyon kodu girin">
                             <button class="promo-btn">Uygula</button>
                         </div>
-    
+
                         <button class="checkout-btn">
                             <i class="fas fa-lock"></i>
                             Güvenli Ödeme
                         </button>
-    
+
                         <div class="payment-methods">
                             <p>Kabul edilen ödeme yöntemleri:</p>
                             <div class="payment-icons">
