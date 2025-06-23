@@ -8,8 +8,7 @@ import { OrderModel, initialOrder } from '@shared/models/order.model';
 import { FormsModule, NgForm } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { NgxMaskDirective } from 'ngx-mask';
-import { lastValueFrom } from 'rxjs';
-import { FlexiToastService } from 'flexi-toast';
+import { FlexiSelectModule } from 'flexi-select';
 
 @Component({
   imports: [
@@ -17,7 +16,8 @@ import { FlexiToastService } from 'flexi-toast';
     TrCurrencyPipe,
     FormsModule,
     DatePipe,
-    NgxMaskDirective
+    NgxMaskDirective,
+    FlexiSelectModule
   ],
   templateUrl: './payment.html',
   encapsulation: ViewEncapsulation.None,
@@ -38,10 +38,12 @@ export default class Payment {
   readonly data = signal<OrderModel>({...initialOrder});
   readonly showSuccessPart = signal<boolean>(false);
   readonly term = signal<boolean>(false);
+  readonly cityResult = httpResource<any[]>(() => "/il-ilce.json");
+  readonly cities = computed(() => this.cityResult.value() ?? []);
+  readonly districts = signal<any[]>([]);
 
   readonly #common = inject(Common);
   readonly #http = inject(HttpClient);
-  readonly #toast = inject(FlexiToastService);
 
   pay(form: NgForm){
     if(!form.valid) return;
@@ -61,5 +63,10 @@ export default class Payment {
       })
       this.#common.basketCount.set(0);
     });
+  }
+
+  setDistricts(){
+    const city = this.cities().find(p => p.il_adi === this.data().city);
+    this.districts.set(city.ilceler);
   }
 }

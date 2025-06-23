@@ -43,22 +43,33 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group">
+                            <div class="form-group city-select">
                                 <label>İl *</label>
-                                <select [(ngModel)]="data().city" name="city" required>
-                                    <option value="">İl seçiniz</option>
-                                    <option value="istanbul">İstanbul</option>
-                                    <option value="ankara">Ankara</option>
-                                    <option value="izmir">İzmir</option>
-                                    <option value="kayseri">Kayseri</option>
-                                </select>
+                                <flexi-select
+                                    [data]="cities()"
+                                    label="il_adi"
+                                    value="il_adi"
+                                    language="tr"
+                                    [(ngModel)]="data().city"
+                                    name="city"
+                                    [required]="true"
+                                    [showValidationErrors]="false"
+                                    (ngModelChange)="setDistricts()"
+                                />
                             </div>
                             <div class="form-group">
                                 <label>İlçe *</label>
-                                <select [(ngModel)]="data().district" name="district" required>
-                                    <option value="">İlçe seçiniz</option>
-                                    <option value="merkez">Merkez</option>
-                                </select>
+                                <flexi-select
+                                    [data]="districts()"
+                                    label="ilce_adi"
+                                    value="ilce_adi"
+                                    language="tr"
+                                    [(ngModel)]="data().district"
+                                    name="district"
+                                    [required]="true"
+                                    [showValidationErrors]="false"
+                                    [disabled]="!data().city"
+                                />
                             </div>
                         </div>
                         <div class="form-group">
