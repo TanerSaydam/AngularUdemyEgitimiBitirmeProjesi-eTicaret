@@ -58,6 +58,7 @@ export default class Home {
   }
 
   onScroll() {
+    if(this.start() >= 0) return; //gelen ürün saysının counutu alıp vermemiz gerekiyordu ama json-server da öyle bir endpoint olmadığı için şimdilik manuel yazdık
     this.limit.update(prev => prev + 6);
     this.start.update(prev => prev + 6);
   }
