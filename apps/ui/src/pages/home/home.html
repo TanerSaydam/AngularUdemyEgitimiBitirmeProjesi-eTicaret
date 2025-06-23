@@ -11,7 +11,7 @@
     <div class="container">
         <h2 class="section-title">Ürünler</h2>
         <div class="products-grid">
-            @for(val of data(); track val.id){
+            @for(val of dataSignal(); track val.id){
                 <div class="product-card">
                     <img [src]="val.imageUrl" [alt]="val.name">
                     <h3>{{val.name}}</h3>
@@ -19,6 +19,14 @@
                     <button class="add-to-cart">Sepete Ekle</button>
                 </div>
             }
+
+            <div
+                class="search-results"
+                infiniteScroll
+                [infiniteScrollDistance]="2"
+                [infiniteScrollThrottle]="50"
+                (scrolled)="onScroll()"
+            ></div>
         </div>
     </div>
 </section>

@@ -14,6 +14,7 @@
     "flexi-grid": "^20.0.0",
     "flexi-select": "^20.0.12",
     "flexi-toast": "^20.0.2",
+    "ngx-infinite-scroll": "^20.0.0",
     "ngx-mask": "^19.0.7",
     "rxjs": "~7.8.0",
     "tr-currency": "^20.0.0"
